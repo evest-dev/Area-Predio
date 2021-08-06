@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+    color: dodgerblue;
+}
+.table_right{
+    padding: 0px 0px 0px 0px;
+    width: 40%;
+    text-align: center;
+}
+.table_left{
+    padding: 0px 0px 0px 70px;
+    
+}

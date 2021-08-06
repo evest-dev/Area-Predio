@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Demo01-02</title>
+    <style>
+        .tb{
+            width:200%;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+    </style>
+    <script>
+        function calcular(){
+            var p1 = document.getElementById("id_p1").value;
+            var p2 = document.getElementById("id_p2").value;
+            var pm, variacion;
+            xprom =  parseFloat(p1)*parseFloat(p2);
+            document.getElementById("id_prom").value = xprom;
+            if(document.getElementById("distrito").value==1){pm=450;}
+            else if(document.getElementById("distrito").value==2){pm=550;}
+            else if(document.getElementById("distrito").value==3){pm=650;}
+            else if(document.getElementById("distrito".value==4)){pm=670;}
+            else if(document.getElementById("distrito").value==5){pm=750;}
+            else{alert("Error, ingrese solo numeros.")}
+            if(document.getElementById("position").value==1){variacion=parseFloat(0.9);}
+            else if(document.getElementById("position").value==2){variacion=parseFloat(1.05);}
+            else if(document.getElementById("position").value==3){variacion=parseFloat(1.1);}
+            else if(document.getElementById("position").value==4){variacion=parseFloat(1.18);}
+            else{alert("Error, ingrese solo numeros.")}
+            var sol=xprom*pm*(parseFloat(variacion));
+            document.getElementById("id_soles").value=sol;
+            var dol= sol*0.29;
+            document.getElementById("id_dolar").value=dol;
+        }
+        function salir(){
+            //window.open("http://www.gmail.com","Blog")
+            window.close();
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <head>
+            <h1>Area de Predio</h1>
+        </head>
+        <table>
+            <th class="table_left"><img src="image.png" alt="" width="65%" height="72%" ></th>
+            <th class="table_right"><table class="tb table table-responsive table-hover col-sm-12">
+            <tr>
+                <td>Largo</td>
+                <td><input type="number" min=0 max=20 id="id_p1" class="form-control" ></td>
+            </tr>
+            <tr>
+                <td>Ancho</td>
+                <td><input type="text" id="id_p2" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Distrito</td>
+                <td>
+                    <select name="" id="distrito" class="form-control">
+                       <option value=""></option>
+                        <option value="2">Cercado de Lima</option>
+                        <option value="3">La victoria </option>
+                        <option value="4">Lince </option>
+                        <option value="5">Jesús María</option>
+                        <option value="6">Pueblo Libre</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Posición</td>
+                <td>
+                    <select name="" id="position" class="form-control">
+                        <option value=""></option>
+                        <option value="1">Pasaje</option>
+                        <option value="2">Jirón o Calle</option>
+                        <option value="3">Avenida</option>
+                        <option value="4">Frente al parque</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Area del terreno</td>
+                <td><input type="text" id="id_prom" value ="0.0" class="form-control" readonly disabled ></td>
+            </tr>
+            <tr>
+                <td>Valor del terreno S/</td>
+                <td><input type="text" id="id_soles" value ="0.0" class="form-control" readonly disabled ></td>
+            </tr>
+            <tr>
+                <td>Valor del terreno U$.</td>
+                <td><input type="text" id="id_dolar" value ="0.0" class="form-control" readonly disabled ></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="button" class="btn btn-primary btn-block" value ="Calcular" onclick="calcular();">
+                </td>
+            </tr>
+        </table>
+        <div style="float:right">
+            <input type="button" class="btn btn-primary" value ="  Salir  " onclick="salir();">
+        </div>
+    </div></th>
+        </table>
+</body>
+</html>
